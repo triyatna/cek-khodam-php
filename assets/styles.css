@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap");
+
+/* Body */
+
+body {
+  font-family: "Playwrite NG Modern", cursive;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fbfbfb;
+  margin: 0;
+  padding: 0;
+  /* background-color: #900000; */
+  background-image: url("https://imgx.sonora.id/crop/0x0:0x0/x/photo/2022/07/12/harimau-putihjpg-20220712073109.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.bg-glass {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.bg-paper {
+  background-image: url("https://e1.pxfuel.com/desktop-wallpaper/70/12/desktop-wallpaper-paper-group-ancient-paper.jpg") !important;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+footer {
+  background-color: #28282894;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  margin-top: 10rem;
+  font-size: 13px;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* media web */
+@media (min-width: 768px) {
+  .card-center {
+    width: 50%;
+    margin: auto;
+    display: block;
+  }
+}
+
+/* media tablet */
+@media (min-width: 576px) and (max-width: 767px) {
+  .card-center {
+    width: 70%;
+    margin: auto;
+    display: block;
+  }
+}
+
+/* media mobile */
+@media (max-width: 767px) {
+  body {
+    background-image: url("https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/oAGbJVgmeAIec12PCGjLYsCmjICSLIyJV4pQDe~tplv-photomode-zoomcover:480:480.jpeg?lk3s=b59d6b55&nonce=91624&refresh_token=1063f518fe02bfa1599acee7a90d9bbb&x-expires=1719158400&x-signature=n9B5ZoQeFIi0dNx8xa%2FVOo4v6WQ%3D&shp=b59d6b55&shcp=-");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+}
