@@ -70,7 +70,7 @@ footer a:hover {
 /* media mobile */
 @media (max-width: 767px) {
   body {
-    background-image: url("https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/oAGbJVgmeAIec12PCGjLYsCmjICSLIyJV4pQDe~tplv-photomode-zoomcover:480:480.jpeg?lk3s=b59d6b55&nonce=91624&refresh_token=1063f518fe02bfa1599acee7a90d9bbb&x-expires=1719158400&x-signature=n9B5ZoQeFIi0dNx8xa%2FVOo4v6WQ%3D&shp=b59d6b55&shcp=-");
+    background-image: url("./Harimau.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

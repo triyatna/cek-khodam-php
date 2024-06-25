@@ -5,8 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cek Khodam</title>
+    <link rel="shortcut icon" href="https://rakyatbengkulu.disway.id/upload/12200177249868c87d89289e2f7e8735.jpeg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles.css">
+    <meta name="description" content="Cek Khodam Anda, Biar Tenang">
+    <meta name="keywords" content="Cek Khodam, Khodam, Cek Khodam Anda">
+    <meta name="author" content="TY Studio DEV">
+    <meta property="og:title" content="Cek Khodam Anda">
+    <meta property="og:description" content="Cek Khodam Anda, Biar Tenang">
+    <meta property="og:image" content="https://rakyatbengkulu.disway.id/upload/12200177249868c87d89289e2f7e8735.jpeg">
+    <meta property="og:url" content="https://mykhodam.tyonly.com/">
+    <meta property="og:site_name" content="Cek Khodam Anda">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:locale:alternate" content="en_US">
 </head>
 
 <body>
@@ -29,15 +41,19 @@
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Sedang mengecek...
                     </button>
-
                 </div>
                 <script>
                     function checkKhodam() {
                         var nama = document.getElementById('nama').value;
                         var tanggal = document.getElementById('tanggal').value;
 
+
                         if (!nama || !tanggal) {
                             alert('Nama dan Tanggal Lahir harus diisi');
+                            return;
+                        }
+                        if (!/^[a-zA-Z\s]*$/.test(nama)) {
+                            alert('Masukan nama kamu dengan benar :)');
                             return;
                         }
                         // ajax
@@ -63,7 +79,19 @@
                                     nama = response.nama;
                                     weton = response.weton.pasaran;
 
-                                    $('.result').html(`
+                                    if (response.id == 0 || response.id >= 105) {
+                                        $('.result').html(`
+                                     <div class="card mt-4 mb-3 bg-paper">
+                                         <div class="card-body">
+                                        <h3>${kodam}</h3>
+                                        <p><b>${nama} tidak punya khodam pendamping</p>
+                                        <p>${deskripsi}</p>
+                                        <p>Weton: ${weton}</p>
+                                         </div>
+                                     </div>
+                                    `);
+                                    } else {
+                                        $('.result').html(`
                                      <div class="card mt-4 mb-3 bg-paper">
                                          <div class="card-body">
                                         <h3>Khodam ${kodam}</h3>
@@ -73,6 +101,7 @@
                                          </div>
                                      </div>
                                     `);
+                                    }
                                 }, 4000);
                             },
                             error: function(xhr, status, error) {
